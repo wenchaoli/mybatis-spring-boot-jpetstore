@@ -18,6 +18,7 @@ package com.kazuki43zoo.jpetstore.service;
 import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.mapper.AccountMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,12 @@ public class AccountService {
 
 	private final AccountMapper accountMapper;
 	private final PasswordEncoder passwordEncoder;
+
+	@Autowired
+	public AccountService(AccountMapper accountMapper, PasswordEncoder passwordEncoder) {
+		this.accountMapper = accountMapper;
+		this.passwordEncoder = passwordEncoder;
+	}
 
 	@Transactional
 	public void createAccount(Account account) {

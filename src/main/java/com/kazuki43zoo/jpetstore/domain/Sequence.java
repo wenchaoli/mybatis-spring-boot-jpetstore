@@ -36,4 +36,23 @@ public class Sequence implements Serializable {
 	private String name;
 	private int nextId;
 
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getNextId() {
+		return nextId;
+	}
+
+	public void setNextId(int nextId) {
+		this.nextId = nextId;
+	}
 }

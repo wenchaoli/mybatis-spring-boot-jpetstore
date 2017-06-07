@@ -21,6 +21,7 @@ import com.kazuki43zoo.jpetstore.domain.Order;
 import com.kazuki43zoo.jpetstore.service.OrderService;
 import com.kazuki43zoo.jpetstore.ui.Cart;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

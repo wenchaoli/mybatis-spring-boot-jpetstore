@@ -21,6 +21,7 @@ import com.kazuki43zoo.jpetstore.service.AccountService;
 import com.kazuki43zoo.jpetstore.component.event.EntityChangedEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;

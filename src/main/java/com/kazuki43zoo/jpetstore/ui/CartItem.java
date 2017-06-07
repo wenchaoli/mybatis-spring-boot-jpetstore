@@ -38,6 +38,34 @@ public class CartItem implements Serializable {
 	private boolean inStock;
 	private BigDecimal total;
 
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public Item getItem() {
+		return item;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public boolean isInStock() {
+		return inStock;
+	}
+
+	public void setInStock(boolean inStock) {
+		this.inStock = inStock;
+	}
+
+	public BigDecimal getTotal() {
+		return total;
+	}
+
+	public void setTotal(BigDecimal total) {
+		this.total = total;
+	}
+
 	public void setItem(Item item) {
 		this.item = item;
 		calculateTotal();

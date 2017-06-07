@@ -24,6 +24,7 @@ import com.kazuki43zoo.jpetstore.mapper.ItemMapper;
 import com.kazuki43zoo.jpetstore.mapper.OrderMapper;
 import com.kazuki43zoo.jpetstore.mapper.SequenceMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -43,6 +44,14 @@ public class OrderService {
 	private final OrderMapper orderMapper;
 	private final SequenceMapper sequenceMapper;
 	private final Clock clock;
+
+	@Autowired
+	public OrderService(ItemMapper itemMapper, OrderMapper orderMapper, SequenceMapper sequenceMapper, Clock clock) {
+		this.itemMapper = itemMapper;
+		this.orderMapper = orderMapper;
+		this.sequenceMapper = sequenceMapper;
+		this.clock = clock;
+	}
 
 	@Transactional
 	public void createOrder(Order order, Account account) {
@@ -92,5 +101,4 @@ public class OrderService {
 		sequenceMapper.incrementSequence(sequence.getName());
 		return sequence.getNextId();
 	}
-
 }
