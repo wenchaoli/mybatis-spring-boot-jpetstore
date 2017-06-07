@@ -1,5 +1,5 @@
-/**
- *    Copyright 2010-2017 the original author or authors.
+/*
+ *    Copyright 2016-2017 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.kazuki43zoo.jpetstore.mapper;
 import java.util.List;
 
 import com.kazuki43zoo.jpetstore.domain.Item;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -25,6 +26,7 @@ import org.apache.ibatis.annotations.Param;
  *
  * @author Eduardo Macarron
  */
+@Mapper
 public interface ItemMapper {
 
   void updateInventoryQuantity(@Param("itemId") String itemId, @Param("increment") int increment);

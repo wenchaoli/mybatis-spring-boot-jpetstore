@@ -34,11 +34,6 @@ public class AccountUserDetailsService implements UserDetailsService {
 
 	private final AccountMapper accountMapper;
 
-	@Autowired
-	public AccountUserDetailsService(AccountMapper accountMapper) {
-		this.accountMapper = accountMapper;
-	}
-
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		return Optional.ofNullable(accountMapper.getAccountByUsername(username))

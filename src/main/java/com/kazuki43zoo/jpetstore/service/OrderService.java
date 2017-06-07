@@ -45,14 +45,6 @@ public class OrderService {
 	private final SequenceMapper sequenceMapper;
 	private final Clock clock;
 
-	@Autowired
-	public OrderService(ItemMapper itemMapper, OrderMapper orderMapper, SequenceMapper sequenceMapper, Clock clock) {
-		this.itemMapper = itemMapper;
-		this.orderMapper = orderMapper;
-		this.sequenceMapper = sequenceMapper;
-		this.clock = clock;
-	}
-
 	@Transactional
 	public void createOrder(Order order, Account account) {
 

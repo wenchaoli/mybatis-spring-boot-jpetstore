@@ -42,13 +42,6 @@ public class CatalogService {
 	private final ItemMapper itemMapper;
 	private final ProductMapper productMapper;
 
-	@Autowired
-	public CatalogService(CategoryMapper categoryMapper, ItemMapper itemMapper, ProductMapper productMapper) {
-		this.categoryMapper = categoryMapper;
-		this.itemMapper = itemMapper;
-		this.productMapper = productMapper;
-	}
-
 	public Category getCategory(String categoryId) {
 		return Optional.ofNullable(categoryMapper.getCategory(categoryId))
 				.orElseThrow(() -> new ResourceNotFoundException("Category", categoryId));
